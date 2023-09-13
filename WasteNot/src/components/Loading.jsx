@@ -26,7 +26,7 @@ const Loading = () => {
       <Meat2 />
       <Hamburger />
       <img
-        src="src/assets/wastenot.png"
+        src="/assets/wastenot.png"
         style={{ height: "50%", zIndex: "999999", position: "absolute" }}
       />
     </Stack>

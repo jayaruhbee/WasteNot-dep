@@ -106,7 +106,7 @@ const Navbar = ({ user, setUser }) => {
             borderRadius="8px"
           >
             <img
-              src="src/assets/wastenot.svg"
+              src="/assets/wastenot.svg"
               width="100%"
               alt="Waste Not Image"
               className="filter"

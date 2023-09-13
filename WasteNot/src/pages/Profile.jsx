@@ -143,7 +143,7 @@ const Profile = () => {
                   >
                     <img
                       src={
-                        profilePic ? profilePic : "src/assets/default_user.png"
+                        profilePic ? profilePic : "/assets/default_user.png"
                       } 
                       style={{ width: "100%", height: "100%" }}
                     />
