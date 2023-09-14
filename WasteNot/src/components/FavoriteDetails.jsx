@@ -33,6 +33,7 @@ const FavoriteCard = ({ recipe }) => {
   const navigate = useNavigate();
   const [expanded, setExpanded] = useState(false);
   const distinctIngredients = [];
+  let instructions = ""
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -44,7 +45,9 @@ const FavoriteCard = ({ recipe }) => {
     }
   }
 
-  const instructions = `<li>${recipe.instructions.replace(/\n/g, "<li>")}</li>`;
+  if(recipe.instructions) {
+    instructions = `<li>${recipe.instructions.replace(/\n/g, "<li>")}</li>`;
+  }
   return (
     <Grid item key={recipe.id} xs={6} sm={5} md={3}>
       <Card
