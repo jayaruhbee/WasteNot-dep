@@ -19,13 +19,12 @@ const DetailsCard = ({ id, open, onClose }) => {
     getMealDetails();
   }, []);
 
-
   if (mealDetails.instructions) {
     instructions = `<li>${mealDetails.instructions.replace(
       /\n/g,
       "<li>"
     )}</li>`;
-  } 
+  }
 
   if (mealDetails.extendedIngredients) {
     for (const ingredient of mealDetails.extendedIngredients) {
@@ -34,8 +33,6 @@ const DetailsCard = ({ id, open, onClose }) => {
       }
     }
   }
-
-  
 
   return (
     <Modal open={open} onClose={onClose}>
@@ -73,23 +70,23 @@ const DetailsCard = ({ id, open, onClose }) => {
             </Typography>
             <div>
               {instructions && (
-             <Typography
-             variant="h2"
-             sx={{
-               fontSize: 24,
-               fontWeight: "bold",
-               marginTop: 1,
-             }}
-           >
-             Instructions:
-           </Typography>
+                <Typography
+                  variant="h2"
+                  sx={{
+                    fontSize: 24,
+                    fontWeight: "bold",
+                    marginTop: 1,
+                  }}
+                >
+                  Instructions:
+                </Typography>
               )}
               {instructions && (
                 <List
                   sx={{
                     listStyle: "decimal",
                     marginTop: 2,
-                    marginLeft:2,
+                    marginLeft: 2,
                   }}
                 >
                   <div dangerouslySetInnerHTML={{ __html: instructions }} />
@@ -102,7 +99,6 @@ const DetailsCard = ({ id, open, onClose }) => {
                 fontSize: 24,
                 fontWeight: "bold",
                 marginTop: 1,
-
               }}
             >
               Ingredients:
@@ -124,8 +120,10 @@ const DetailsCard = ({ id, open, onClose }) => {
                     key={i}
                   >
                     {ingredient.amount} {ingredient.unit} -{" "}
-                    {ingredient.nameClean.charAt(0).toUpperCase() +
-                      ingredient.nameClean.slice(1)}
+                    {ingredient.nameClean
+                      ? ingredient.nameClean.charAt(0).toUpperCase() +
+                        ingredient.nameClean.slice(1)
+                      : "N/A"}{" "}
                   </ListItem>
                 ))}
             </List>

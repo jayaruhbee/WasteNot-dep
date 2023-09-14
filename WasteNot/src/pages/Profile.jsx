@@ -180,6 +180,7 @@ const Profile = () => {
               mt={8}
             >
               <Stack
+              align="center"
                 id="profile-data-fields"
                 gap={4}
                 alignItems="center"
@@ -188,7 +189,7 @@ const Profile = () => {
                 width="100%"
               >
                 <form onSubmit={updateUser}
-                justifyContent="center">
+                >
                 <TextField
                   variant="filled"
                   label=""
