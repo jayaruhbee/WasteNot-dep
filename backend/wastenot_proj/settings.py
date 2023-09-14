@@ -27,10 +27,15 @@ SECRET_KEY = env.get("SECRET_KEY")
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
+
+CORS_ALLOWED_ORIGINS = [
+
+    "http://localhost:5173", 
+]
 
 ALLOWED_HOSTS = ["*"]
-CSRF_TRUSTED_ORIGINS = [""]
+# CSRF_TRUSTED_ORIGINS = [""]
 
 # Added the following settings to allow for HTTP Cookies: 
 # ALLOWED_HOSTS = ["*"]
