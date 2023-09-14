@@ -26,10 +26,8 @@ function App() {
   };
 
   useEffect(() => {
-    if (user) {
       whoAmI();
-    }
-  }, [user]);
+  }, []);
 
   useEffect(() => {
     lastVisited.current = location.pathname;

@@ -187,6 +187,8 @@ const Profile = () => {
                 height="100%"
                 width="100%"
               >
+                <form onSubmit={updateUser}
+                justifyContent="center">
                 <TextField
                   variant="filled"
                   label=""
@@ -216,6 +218,7 @@ const Profile = () => {
                   variant="filled"
                   sx={{
                     width: "90%",
+                    marginTop:5,
                     backgroundColor: "white",
                     input: { color: "#1a2e32" },
                     borderRadius: "6px",
@@ -238,6 +241,7 @@ const Profile = () => {
                   onChange={(e) => setEmail(e.target.value)}
                   sx={{
                     width: "90%",
+                    marginTop:5,
                     backgroundColor: "white",
                     input: { color: "#1a2e32" },
                     borderRadius: "6px",
@@ -349,6 +353,7 @@ style={{ display: 'none' }} // Hide the original input element
                     Cancel
                   </Button>
                 </Stack>
+                </form>
               </Stack>
             </Stack>
           </Stack>

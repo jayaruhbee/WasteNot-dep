@@ -2,12 +2,21 @@ import React from "react";
 import Typography from "@mui/material/Typography";
 import { Paper, Box, Stack, Button } from "@mui/material";
 import "../styles/Font.css";
-import { BorderAllRounded, BorderStyleRounded } from "@mui/icons-material";
+import { BorderAllRounded, BorderStyleRounded, Details } from "@mui/icons-material";
 import { useState, useEffect } from "react";
 import api from "../utilities.jsx";
+import DetailsCard from "./Details";
 
 export default function RecipeCard({ data }) {
   const [userFavorites, setUserFavorites] = useState([]);
+  const [isCardOpen, setIsCardOpen] = useState(false);
+  const handleOpenCard = () => {
+    setIsCardOpen(true);
+  };
+  const handleCloseCard = () => {
+    setIsCardOpen(false);
+  };
+  
 
   const isFavorited = userFavorites.some((recipe) => recipe.id === data.id);
 
@@ -119,6 +128,21 @@ export default function RecipeCard({ data }) {
             <Typography>{data.descriptions}</Typography>
           </Stack>
           <Button
+  onClick={handleOpenCard}
+  variant="contained"
+  sx={{
+    backgroundColor: "#68A2B1",
+    ":hover": {
+      backgroundColor: "#8ED7EA",
+    },
+    display: "flex",
+    flexDirection: "",
+  }}
+> View Recipe
+</Button>
+<DetailsCard id={data.id} onClose={handleCloseCard} open={isCardOpen} />
+
+          <Button
             onClick={() => handleFavorite(data.id, isFavorited)}
             variant="contained"
             sx={{
@@ -128,6 +152,7 @@ export default function RecipeCard({ data }) {
               },
               display: "flex",
               flexDirection: "",
+              marginTop: 2
             }}
           >
             {isFavorited ? "UnFavorite" : "Favorite"}

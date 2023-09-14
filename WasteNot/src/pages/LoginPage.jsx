@@ -19,7 +19,7 @@ export default function LoginPage() {
   const logIn = async (e) => {
     e.preventDefault();
     let response = await api
-      .post("user/login/", {
+      .post("/user/login/", {
         email: email,
         password: password,
       })
@@ -29,7 +29,6 @@ export default function LoginPage() {
     let user = response.data.user;
     setUser(user);
     setPassword("");
-    console.log(user);
     navigate("/");
     navigate("/ingredients", { replace: true });
   };
@@ -154,17 +153,6 @@ export default function LoginPage() {
                 mb: 2,
               }}
             >
-              {/* <Button
-                id="cancel-button"
-                variant="text"
-                onClick={() => navigate("/signup")}
-                sx={{
-                  color: "#000000",
-                  "&:hover": { borderRadius: "8px" },
-                }}
-              >
-                Need an account?
-              </Button> */}
               <Button
                 id="save-button"
                 variant="contained"
