@@ -26,14 +26,14 @@ export default function RecipeCarousel() {
           ingredientList
         );
         setSteps(response.data);
-        console.log(response.data);
+        // console.log(response.data);
       } catch (error) {
         console.error("There was an error getting your recipes:", error);
       }
     };
 
     getSteps();
-    console.log(steps)
+    // console.log(steps)
   }, [ingredientList]);
 
   const handleNextClick = () => {

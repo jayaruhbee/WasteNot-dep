@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const ListItemComponent = ({ name, component }) => {
   const navigate = useNavigate();
   const handleClick = () => {
-    console.log(name);
+    // console.log(name);
     if (name === "Get Recipes") {
       navigate(`/ingredients`);
     } else {

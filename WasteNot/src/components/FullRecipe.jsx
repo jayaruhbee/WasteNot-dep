@@ -66,7 +66,7 @@ const FullRecipe = () => {
     } else {
       result = "Unavailable";
     }
-    console.log("result", result);
+    // console.log("result", result);
   }
 
   if (recipeDetails.summary) {
