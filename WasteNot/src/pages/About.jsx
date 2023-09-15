@@ -143,7 +143,7 @@ const About = () => {
                       What can we do?
                     </Typography>
                     <Typography variant="body1" paragraph>
-                      Let's start by eating the food that's in our pantry and frigerator. Use our inovative ingredient search feature to utilize the food you have on hand to create new and delicous meals. Save those recipes into you favorites list and even keep track of what you have in stock!
+                      Let's start by eating the food that's in our pantry and refrigerator. Use our innovative ingredient search feature to utilize the food you have on hand to create new and delicous meals. Save those recipes into you favorites list and even keep track of what you have in stock!
                     </Typography>
                   </CardContent>
                 </Card>
